@@ -1,6 +1,8 @@
 # PhotoAlbumWebApp
 A simple photo web application created in .Net 6 to demonstrate Cloud Storage, Web App and Keyvault
 
+> #### Note:  You have to setup Azure Cloud Storage and Azure Keyvault as shown below for this web application to function properly.
+
 ---
 
 ## Create Azure Storage with defaults
