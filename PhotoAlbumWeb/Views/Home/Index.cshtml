@@ -1,8 +1,35 @@
-﻿@{
+﻿@model PhotoAlbumWeb.Models.ImageModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 bg-light">
+                    <h3>Upload a Photo Image:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 bg-info">
+                    <form enctype="multipart/form-data" method="post" asp-controller="Home" asp-action="Index">
+                        <dl>
+                            <dt>
+                                <label>Upload Images</label>
+                            </dt>
+                            <dd>
+                                <input type="file" name="Images" id="Images" multiple />
+                            </dd>
+                        </dl>
+                        <input class="btn btn-lg btn-success" type="submit" value="Upload Images" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

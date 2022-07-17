@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj": {}
+    "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj": {}
   },
   "projects": {
-    "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj": {
+    "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj",
+        "projectUniqueName": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj",
         "projectName": "PhotoAlbumWeb",
-        "projectPath": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj",
+        "projectPath": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb.csproj",
         "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\PhotoAlbumWeb\\obj\\",
+        "outputPath": "C:\\git\\GithubPrac\\PhotoAlbumWebApp\\PhotoAlbumWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,7 +1,13 @@
+using PhotoAlbumWeb.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//For In-Memory Db Operations
+builder.Services.AddDbContext<ImageDbContext>(options => options.UseInMemoryDatabase("MyImageDb"));
 
 var app = builder.Build();
 
