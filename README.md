@@ -23,6 +23,13 @@ az storage account create `
  --sku Standard_LRS
 ```
 
+
+#### Create Storage Account - Container with public access to the images
+```
+az storage container create -n myimages --public-access blob
+```
+
+
 #### Paste following details in app.settings file
 Note: You have to find connection string for your azure storage account by visiting **Storage Account > Access Keys**
 ![image](https://user-images.githubusercontent.com/30829678/179418136-801e1e52-4bbb-4687-b676-9c91efd5ed85.png)
