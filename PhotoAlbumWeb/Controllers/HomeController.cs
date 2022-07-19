@@ -1,36 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PhotoAlbumWeb.AzureUtilities.Interfaces;
 using PhotoAlbumWeb.Models;
 using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
 
 namespace PhotoAlbumWeb.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly IWebHostEnvironment _hostEnvironment;
-        private readonly ImageDbContext _context;
+    {        
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger, 
-            IWebHostEnvironment hostEnvironment,
-            ImageDbContext context)
+        private readonly IStorage storage;
+        private readonly IConfiguration configuration;
+        private readonly string storageConnectionString;
+        private readonly string containerName;
+        
+        public HomeController(ILogger<HomeController> logger,      
+            IStorage storage,
+            IConfiguration configuration)
         {
-            _logger = logger;
-            this._hostEnvironment = hostEnvironment;
-            _context = context;
+            _logger = logger;            
+            this.storage = storage;
+            this.storageConnectionString = configuration["Storage:ConnStr"];
+            this.containerName = configuration["Storage:ContainerName"];  
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            ImageModel model = new ImageModel();
+            model.ImageList = await storage.GetAllImageUrls(storageConnectionString, containerName);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(List<IFormFile> Images)
+        public async Task<IActionResult> Index(ImageModel model)
         {
-            long size = Images.Sum(f => f.Length);
+            long size = model.Images.Sum(f => f.Length);
 
-            foreach (var imageFile in Images)
+            foreach (var imageFile in model.Images)
             {
                 if (imageFile.Length > 0)
                 {
@@ -38,7 +45,7 @@ namespace PhotoAlbumWeb.Controllers
 
                     using (var stream = System.IO.File.Create(filePath))
                     {
-                        await imageFile.CopyToAsync(stream);
+                        await storage.UploadImage(storageConnectionString, containerName, stream, Path.GetExtension(imageFile.FileName));
                     }
                 }
             }
@@ -46,11 +53,7 @@ namespace PhotoAlbumWeb.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+                
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -55,3 +55,10 @@ C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Microsoft.Enti
 C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\obj\Debug\net6.0\PhotoAlbumWeb.csproj.CopyComplete
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Azure.Core.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\git\GithubPrac\PhotoAlbumWebApp\PhotoAlbumWeb\bin\Debug\net6.0\System.Memory.Data.dll

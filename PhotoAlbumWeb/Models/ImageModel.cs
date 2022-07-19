@@ -6,18 +6,8 @@ namespace PhotoAlbumWeb.Models
 {
     public class ImageModel
     {
-        [Key]
-        public int ImageId { get; set; }
+        public List<string> ImageList { get; set; } = new List<string>();
 
-        [Column(TypeName = "nvarchar(50)")]
-        public string Title { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        [DisplayName("Image Name")]
-        public string ImageName { get; set; }
-
-        [NotMapped]
-        [DisplayName("Upload File")]
-        public IFormFile ImageFile { get; set; }
+        public List<IFormFile> Images { get; set; }
     }
 }
