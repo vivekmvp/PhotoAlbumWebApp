@@ -24,11 +24,10 @@ az storage account create `
 ```
 
 
-#### Create Storage Account - Container with public access to the images
-```
-az storage container create -n myimages --public-access blob
-```
+#### Create Storage Account Container with public access to the images
+![image](https://user-images.githubusercontent.com/30829678/179652437-892d9da2-585a-4fea-b074-99c70fee8190.png)
 
+<br />
 
 #### Paste following details in app.settings file
 Note: You have to find connection string for your azure storage account by visiting **Storage Account > Access Keys**
